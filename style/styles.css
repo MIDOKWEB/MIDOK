@@ -99,7 +99,7 @@ a {
 
 .dropdown {
     display: none;
-    animation: growDown 300ms ease-in-out forwards;
+    animation: growDown 300ms ease-in-out forwards
 }
 
 @keyframes growDown {
@@ -113,6 +113,7 @@ a {
         transform: scaleY(1);
     }
 }
+
 .green {
     background-color: rgb(140, 198, 62);
 }
@@ -147,6 +148,74 @@ p {
     color: rgba(245, 245, 245, 0.99);
     text-align: center;
     margin: 0% 20% 0% 20% !important;
+}
+
+#topBtn {
+    position: fixed;
+    display: none;
+    bottom: 10vh;
+    right: 10px;
+    padding: 6px 12.5px 8px 11.5px;
+    border: 0px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+#topBtn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.footer {
+    background-color: rgb(192, 111, 111);
+}
+
+.footer div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fa-facebook {
+    color: rgb(66, 103, 178);
+    margin-right: 1rem;
+}
+
+.fa-facebook:hover {
+    color: rgb(22, 63, 146);
+}
+
+.fa-instagram {
+    color: transparent;
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    margin-right: 1rem;
+}
+
+.fa-instagram:hover {
+    opacity: 0.7;
+}
+
+.fa-envelope {
+    color: white;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    margin-right: 1rem;
+}
+
+.fa-envelope:hover {
+    color: rgba(245, 245, 245, 0.75);
+}
+
+.white {
+    font-weight: bold;
+    color: rgba(245, 245, 245, 0.99);
+}
+
+#custometd {
+    padding: 0px;
+    padding-right: 1rem;
 }
 
 
@@ -193,6 +262,9 @@ p {
     }
     .dropdown {
         background-color: rgb(251, 251, 251);
+    }
+    #topBtn {
+        bottom: 15vh;
     }
 }
 
