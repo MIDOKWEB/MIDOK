@@ -194,7 +194,11 @@ p {
 }
 
 .fa-instagram:hover {
-    opacity: 0.7;
+    color: transparent;
+    background: radial-gradient(circle at 30% 107%, #ffef41 0%, #ffef41 5%, #e72d1c 45%, #c90089 60%, #1041d3 90%);
+    background: -webkit-radial-gradient(circle at 30% 107%, #ffef41 0%, #ffef41 5%, #e72d1c 45%, #c90089 60%, #1041d3 90%);
+    background-clip: text;
+    -webkit-background-clip: text;
 }
 
 .fa-envelope {

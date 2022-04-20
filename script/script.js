@@ -42,25 +42,49 @@ async function scrollEvent() {
     let current_scroll_position = window.scrollY
     const anchor = document.getElementById('section2')
     let anchor_element = anchor.getBoundingClientRect()
+    let window_size = window.innerWidth
+    console.log(anchor_element.top)
 
-    if (anchor_element.top < 5) {
-        topbtn.style.display = 'flex'
-        if (fade_flag == 0) {
-            for (let i = 0; i < 50; i++) {
-                await delay(5)
-                topbtn.style.opacity = i * 0.02
+    if (window_size >= 650) {
+        if (anchor_element.top < 5) {
+            topbtn.style.display = 'flex'
+            if (fade_flag == 0) {
+                for (let i = 0; i < 50; i++) {
+                    await delay(5)
+                    topbtn.style.opacity = i * 0.02
+                }
             }
+            fade_flag = 1
+        } else {
+            if (fade_flag == 1) {
+                for (let j = 50; j > 0; j--) {
+                    await delay(5)
+                    topbtn.style.opacity = j * 0.02
+                }
+            }
+            topbtn.style.display = 'none'
+            fade_flag = 0
         }
-        fade_flag = 1
     } else {
-        if (fade_flag == 1) {
-            for (let j = 50; j > 0; j--) {
-                await delay(5)
-                topbtn.style.opacity = j * 0.02
+        if (anchor_element.top < 800) {
+            topbtn.style.display = 'flex'
+            if (fade_flag == 0) {
+                for (let i = 0; i < 50; i++) {
+                    await delay(5)
+                    topbtn.style.opacity = i * 0.02
+                }
             }
+            fade_flag = 1
+        } else {
+            if (fade_flag == 1) {
+                for (let j = 50; j > 0; j--) {
+                    await delay(5)
+                    topbtn.style.opacity = j * 0.02
+                }
+            }
+            topbtn.style.display = 'none'
+            fade_flag = 0
         }
-        topbtn.style.display = 'none'
-        fade_flag = 0
     }
 }
 
