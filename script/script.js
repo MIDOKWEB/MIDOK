@@ -1,11 +1,16 @@
-window.addEventListener("resize", resizeEvent)
+//const delay = ms => new Promise(res => setTimeout(res, ms));
 
-document.addEventListener("DOMContentLoaded", function(event) {
+window.addEventListener("resize", function() {
+    if (window.innerWidth >= 650) {
+        dropdown_flag = true
+        dropdown_element.style.display = 'none'
+    }
+})
+
+document.addEventListener("DOMContentLoaded", function() {
     let scrollPosition = localStorage.getItem('scrollPostion')
     if (scrollPosition) window.scrollTo(0, scrollPosition)
 })
-
-const delay = ms => new Promise(res => setTimeout(res, ms));
 
 window.onbeforeunload = function() {
     localStorage.setItem('scrollPosition', window.scrollY)
@@ -13,15 +18,6 @@ window.onbeforeunload = function() {
 
 const dropdown_element = document.getElementById('dropdown')
 let dropdown_flag = true
-
-function resizeEvent() {
-    let width = window.innerWidth
-
-    if (width >= 650) {
-        dropdown_flag = true
-        dropdown_element.style.display = 'none'
-    }
-}
 
 function dropdown() {
     if (dropdown_flag) {
@@ -33,60 +29,16 @@ function dropdown() {
     }
 }
 
-window.addEventListener('scroll', scrollEvent)
-
-const topbtn = document.getElementById('topBtn')
-
-let fade_flag = 0
-async function scrollEvent() {
-    let current_scroll_position = window.scrollY
+const scrollButton = document.querySelector('.topBtn')
+window.addEventListener('scroll', function() {
     const anchor = document.getElementById('section2')
     let anchor_element = anchor.getBoundingClientRect()
-    let window_size = window.innerWidth
-    console.log(anchor_element.top)
-
-    if (window_size >= 650) {
-        if (anchor_element.top < 5) {
-            topbtn.style.display = 'flex'
-            if (fade_flag == 0) {
-                for (let i = 0; i < 50; i++) {
-                    await delay(5)
-                    topbtn.style.opacity = i * 0.02
-                }
-            }
-            fade_flag = 1
-        } else {
-            if (fade_flag == 1) {
-                for (let j = 50; j > 0; j--) {
-                    await delay(5)
-                    topbtn.style.opacity = j * 0.02
-                }
-            }
-            topbtn.style.display = 'none'
-            fade_flag = 0
-        }
+    if (window.innerWidth > 650) {
+        scrollButton.classList.toggle("active", anchor_element.top < 5)
     } else {
-        if (anchor_element.top < 800) {
-            topbtn.style.display = 'flex'
-            if (fade_flag == 0) {
-                for (let i = 0; i < 50; i++) {
-                    await delay(5)
-                    topbtn.style.opacity = i * 0.02
-                }
-            }
-            fade_flag = 1
-        } else {
-            if (fade_flag == 1) {
-                for (let j = 50; j > 0; j--) {
-                    await delay(5)
-                    topbtn.style.opacity = j * 0.02
-                }
-            }
-            topbtn.style.display = 'none'
-            fade_flag = 0
-        }
+        scrollButton.classList.toggle("active", anchor_element.top < 800)
     }
-}
+})
 
 function scrollToTop() {
     window.scrollTo(0, 0)
