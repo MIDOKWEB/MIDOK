@@ -57,7 +57,6 @@ a {
 #right {
     color: rgb(90, 132, 247);
     position: absolute;
-    right: unset;
 }
 
 #right:hover {
@@ -98,7 +97,6 @@ a {
 }
 
 .dropdown {
-    display: none;
     animation: growDown 300ms ease-in-out forwards
 }
 
@@ -260,6 +258,10 @@ p {
     padding-right: 1rem;
 }
 
+.bottom_6 {
+    bottom: 6px;
+}
+
 
 /*Basic styling end*/
 
@@ -290,9 +292,6 @@ p {
     }
     #weather-variable {
         display: none;
-    }
-    #weather-variable-2 {
-        padding-top: 6px;
     }
     #icon {
         position: absolute;

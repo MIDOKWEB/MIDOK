@@ -29,88 +29,88 @@
 </head>
 
 <body>
-    <header class="navbar">
-        <nav class="container-lg">
-            <a href="index.html" class="logo"><img src="img/logo.png" alt="Logó" title="Logó" id="logo"></a>
+    <div id="app">
+        <header class="navbar">
+            <nav class="container-lg">
+                <a href="index.html" class="logo"><img src="img/logo.png" alt="Logó" title="Logó" id="logo"></a>
+                <a id="green" href="#section1" class="navbar-brand">Title</a>
+                <a id="orange" href="#section2" class="navbar-brand">Title</a>
+                <a id="red" href="#section3" class="navbar-brand">Title</a>
+                <a id="right" href="#section1" class="navbar-brand" :style="{'right': rightPosSize + 'px'}">Title</a>
+                <div id="weather-variable" class="weather-widget"><i :class="weatherIcon" :style="{color: activeColor}"></i><span id="weather-widget" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold; color: rgb(90, 132, 247); margin-left: -1px ;display: inline">&nbsp; {{ temp }}°C</span></div>
+                <a v-on:click="toggleDropdown()" id="icon"><i class="fa-solid fa-bars fa"></i></a>
+            </nav>
+        </header>
+        <div class="dropdown" id="dropdown" style="display: flex" v-show="dropDownFlag">
             <a id="green" href="#section1" class="navbar-brand">Title</a>
             <a id="orange" href="#section2" class="navbar-brand">Title</a>
             <a id="red" href="#section3" class="navbar-brand">Title</a>
-            <a id="right" href="#section1" class="navbar-brand">Title</a>
-            <div id="weather-variable" class="weather-widget"></div>
-            <a onclick="dropdown()" id="icon"><i class="fa-solid fa-bars fa"></i></a>
-        </nav>
-    </header>
-    <div class="dropdown" id="dropdown">
-        <a id="green" href="#section1" class="navbar-brand">Title</a>
-        <a id="orange" href="#section2" class="navbar-brand">Title</a>
-        <a id="red" href="#section3" class="navbar-brand">Title</a>
-        <a id="blue" href="#section1" class="navbar-brand">Title</a>
-        <div id="weather-variable-2" class="weather-widget"></div>
-    </div>
-    <div class="green">
-        <b class="anchor" id="section1"></b>
-        <h1>Lorem ipsum</h1>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget neque venenatis, lacinia lorem eu, feugiat metus. Sed accumsan tortor sed enim semper, ut eleifend massa sollicitudin. Quisque vitae imperdiet nulla. Donec vel posuere felis. Ut aliquet
-            sem diam, eget euismod tellus suscipit et. Nam ac ullamcorper velit. Fusce non magna non ligula maximus viverra. Vestibulum sed libero est. Duis tempus nulla vitae purus dictum, nec ornare dui commodo. Praesent feugiat lectus metus. Fusce
-            suscipit mauris nec nisl auctor placerat. Nullam venenatis nibh sed aliquam sodales. Cras a tortor at lectus vulputate volutpat. Phasellus placerat, neque sed dapibus aliquet, nisl nisl sollicitudin urna, sit amet tempus neque massa vitae
-            lorem. Donec diam orci, tempus id mollis vitae, consectetur vitae urna. Suspendisse at mauris molestie, pharetra nibh quis, posuere lorem. Ut dolor purus, ultricies a diam at, dictum convallis urna. Quisque efficitur tortor in massa bibendum,
-            et vulputate metus consequat. Donec mollis ipsum sit amet nibh hendrerit, elementum mattis mi blandit. Praesent ut sagittis ex. Cras convallis, nunc vel feugiat tempor, quam massa porttitor magna, quis maximus ex nisl sed tortor. Donec vitae
-            consectetur dui. Mauris dapibus, dolor ac pellentesque posuere, nulla eros imperdiet sem, non consectetur nunc dui et elit. Sed ut tempus odio. Sed iaculis mi erat, eu malesuada felis venenatis sed. Maecenas aliquam, turpis in euismod vestibulum,
-            lorem urna feugiat tellus, aliquet molestie felis libero nec mi. Nunc ultrices tempor urna viverra hendrerit. Donec sit amet lobortis purus, sit amet malesuada metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lobortis
-            quis turpis eget fermentum. Sed nec diam ut ipsum rutrum bibendum quis ac nisl. Mauris tristique purus quis augue maximus, sit amet suscipit nisl bibendum. In hac habitasse platea dictumst.
-        </p>
-    </div>
-
-    <div class="orange">
-        <b class="anchor" id="section2"></b>
-        <h1>Lorem ipsum</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget neque venenatis, lacinia lorem eu, feugiat metus. Sed accumsan tortor sed enim semper, ut eleifend massa sollicitudin. Quisque vitae imperdiet nulla. Donec vel posuere felis. Ut
-            aliquet sem diam, eget euismod tellus suscipit et. Nam ac ullamcorper velit. Fusce non magna non ligula maximus viverra. Vestibulum sed libero est. Duis tempus nulla vitae purus dictum, nec ornare dui commodo. Praesent feugiat lectus metus.
-            Fusce suscipit mauris nec nisl auctor placerat. Nullam venenatis nibh sed aliquam sodales. Cras a tortor at lectus vulputate volutpat. Phasellus placerat, neque sed dapibus aliquet, nisl nisl sollicitudin urna, sit amet tempus neque massa
-            vitae lorem. Donec diam orci, tempus id mollis vitae, consectetur vitae urna. Suspendisse at mauris molestie, pharetra nibh quis, posuere lorem. Ut dolor purus, ultricies a diam at, dictum convallis urna. Quisque efficitur tortor in massa
-            bibendum, et vulputate metus consequat. Donec mollis ipsum sit amet nibh hendrerit, elementum mattis mi blandit. Praesent ut sagittis ex. Cras convallis, nunc vel feugiat tempor, quam massa porttitor magna, quis maximus ex nisl sed tortor.
-            Donec vitae consectetur dui. Mauris dapibus, dolor ac pellentesque posuere, nulla eros imperdiet sem, non consectetur nunc dui et elit. Sed ut tempus odio. Sed iaculis mi erat, eu malesuada felis venenatis sed. Maecenas aliquam, turpis in
-            euismod vestibulum, lorem urna feugiat tellus, aliquet molestie felis libero nec mi. Nunc ultrices tempor urna viverra hendrerit. Donec sit amet lobortis purus, sit amet malesuada metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Vivamus lobortis quis turpis eget fermentum. Sed nec diam ut ipsum rutrum bibendum quis ac nisl. Mauris tristique purus quis augue maximus, sit amet suscipit nisl bibendum. In hac habitasse platea dictumst.
-        </p>
-    </div>
-    <div class="red">
-        <b class="anchor" id="section3"></b>
-        <h1>Lorem ipsum</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget neque venenatis, lacinia lorem eu, feugiat metus. Sed accumsan tortor sed enim semper, ut eleifend massa sollicitudin. Quisque vitae imperdiet nulla. Donec vel posuere felis. Ut
-            aliquet sem diam, eget euismod tellus suscipit et. Nam ac ullamcorper velit. Fusce non magna non ligula maximus viverra. Vestibulum sed libero est. Duis tempus nulla vitae purus dictum, nec ornare dui commodo. Praesent feugiat lectus metus.
-            Fusce suscipit mauris nec nisl auctor placerat. Nullam venenatis nibh sed aliquam sodales. Cras a tortor at lectus vulputate volutpat. Phasellus placerat, neque sed dapibus aliquet, nisl nisl sollicitudin urna, sit amet tempus neque massa
-            vitae lorem. Donec diam orci, tempus id mollis vitae, consectetur vitae urna. Suspendisse at mauris molestie, pharetra nibh quis, posuere lorem. Ut dolor purus, ultricies a diam at, dictum convallis urna. Quisque efficitur tortor in massa
-            bibendum, et vulputate metus consequat. Donec mollis ipsum sit amet nibh hendrerit, elementum mattis mi blandit. Praesent ut sagittis ex. Cras convallis, nunc vel feugiat tempor, quam massa porttitor magna, quis maximus ex nisl sed tortor.
-            Donec vitae consectetur dui. Mauris dapibus, dolor ac pellentesque posuere, nulla eros imperdiet sem, non consectetur nunc dui et elit. Sed ut tempus odio. Sed iaculis mi erat, eu malesuada felis venenatis sed. Maecenas aliquam, turpis in
-            euismod vestibulum, lorem urna feugiat tellus, aliquet molestie felis libero nec mi. Nunc ultrices tempor urna viverra hendrerit. Donec sit amet lobortis purus, sit amet malesuada metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Vivamus lobortis quis turpis eget fermentum. Sed nec diam ut ipsum rutrum bibendum quis ac nisl. Mauris tristique purus quis augue maximus, sit amet suscipit nisl bibendum. In hac habitasse platea dictumst.
-        </p>
-    </div>
-    <button class="topBtn" onclick="scrollToTop()">☝️</button>
-    <footer class="footer">
-        <div id="footer-container">
-            <table>
-                <tbody>
-                    <tr>
-                        <td class="white" id="custometd">Keress minket:</td>
-                        <td><a href="https://instagram.com/miskolcvarosidiakonkormanyzat?igshid=YmMyMTA2M2Y=" target="_blank"><i class="fab fa-instagram fa-2x"></i></a></td>
-                        <td><a href="https://www.facebook.com/Miskolcvarosidiakonkormanyzat/" target="_blank"><i class="fab fa-facebook fa-2x"></i></a></td>
-                        <td>
-                            <a href=" mailto:midok@gmail.com "></i><i class="far fa-envelope fa-2x"></i></a>
-                        </td>
-                    </tr>
-                </tbody>
-
-            </table>
+            <a id="blue" href="#section1" class="navbar-brand">Title</a>
+            <div class="weather-widget" :style="{bottom: dropDownFlag ? '6px' : 'unset'}"><i :class="weatherIcon"></i><span id="weather-widget" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold; color: rgb(90, 132, 247); margin-left: -1px ; padding-top: 6px">&nbsp; {{ temp }}°C</span></div>
         </div>
-        <p class="white">© Copyright 2022 MIDÖK</p>
-    </footer>
+        <div class="green">
+            <b class="anchor" id="section1"></b>
+            <h1>Lorem ipsum</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget neque venenatis, lacinia lorem eu, feugiat metus. Sed accumsan tortor sed enim semper, ut eleifend massa sollicitudin. Quisque vitae imperdiet nulla. Donec vel posuere felis. Ut aliquet
+                sem diam, eget euismod tellus suscipit et. Nam ac ullamcorper velit. Fusce non magna non ligula maximus viverra. Vestibulum sed libero est. Duis tempus nulla vitae purus dictum, nec ornare dui commodo. Praesent feugiat lectus metus. Fusce
+                suscipit mauris nec nisl auctor placerat. Nullam venenatis nibh sed aliquam sodales. Cras a tortor at lectus vulputate volutpat. Phasellus placerat, neque sed dapibus aliquet, nisl nisl sollicitudin urna, sit amet tempus neque massa vitae
+                lorem. Donec diam orci, tempus id mollis vitae, consectetur vitae urna. Suspendisse at mauris molestie, pharetra nibh quis, posuere lorem. Ut dolor purus, ultricies a diam at, dictum convallis urna. Quisque efficitur tortor in massa bibendum,
+                et vulputate metus consequat. Donec mollis ipsum sit amet nibh hendrerit, elementum mattis mi blandit. Praesent ut sagittis ex. Cras convallis, nunc vel feugiat tempor, quam massa porttitor magna, quis maximus ex nisl sed tortor. Donec
+                vitae consectetur dui. Mauris dapibus, dolor ac pellentesque posuere, nulla eros imperdiet sem, non consectetur nunc dui et elit. Sed ut tempus odio. Sed iaculis mi erat, eu malesuada felis venenatis sed. Maecenas aliquam, turpis in euismod
+                vestibulum, lorem urna feugiat tellus, aliquet molestie felis libero nec mi. Nunc ultrices tempor urna viverra hendrerit. Donec sit amet lobortis purus, sit amet malesuada metus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Vivamus lobortis quis turpis eget fermentum. Sed nec diam ut ipsum rutrum bibendum quis ac nisl. Mauris tristique purus quis augue maximus, sit amet suscipit nisl bibendum. In hac habitasse platea dictumst.
+            </p>
+        </div>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.js " integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin=" anonymous "></script>
-    <script src="script/AmBRZG4Qxi.js "></script>
-    <script src="script/script.js "></script>
+        <div class="orange">
+            <b class="anchor" id="section2"></b>
+            <h1>Lorem ipsum</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget neque venenatis, lacinia lorem eu, feugiat metus. Sed accumsan tortor sed enim semper, ut eleifend massa sollicitudin. Quisque vitae imperdiet nulla. Donec vel posuere felis.
+                Ut aliquet sem diam, eget euismod tellus suscipit et. Nam ac ullamcorper velit. Fusce non magna non ligula maximus viverra. Vestibulum sed libero est. Duis tempus nulla vitae purus dictum, nec ornare dui commodo. Praesent feugiat lectus
+                metus. Fusce suscipit mauris nec nisl auctor placerat. Nullam venenatis nibh sed aliquam sodales. Cras a tortor at lectus vulputate volutpat. Phasellus placerat, neque sed dapibus aliquet, nisl nisl sollicitudin urna, sit amet tempus neque
+                massa vitae lorem. Donec diam orci, tempus id mollis vitae, consectetur vitae urna. Suspendisse at mauris molestie, pharetra nibh quis, posuere lorem. Ut dolor purus, ultricies a diam at, dictum convallis urna. Quisque efficitur tortor
+                in massa bibendum, et vulputate metus consequat. Donec mollis ipsum sit amet nibh hendrerit, elementum mattis mi blandit. Praesent ut sagittis ex. Cras convallis, nunc vel feugiat tempor, quam massa porttitor magna, quis maximus ex nisl
+                sed tortor. Donec vitae consectetur dui. Mauris dapibus, dolor ac pellentesque posuere, nulla eros imperdiet sem, non consectetur nunc dui et elit. Sed ut tempus odio. Sed iaculis mi erat, eu malesuada felis venenatis sed. Maecenas aliquam,
+                turpis in euismod vestibulum, lorem urna feugiat tellus, aliquet molestie felis libero nec mi. Nunc ultrices tempor urna viverra hendrerit. Donec sit amet lobortis purus, sit amet malesuada metus. Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Vivamus lobortis quis turpis eget fermentum. Sed nec diam ut ipsum rutrum bibendum quis ac nisl. Mauris tristique purus quis augue maximus, sit amet suscipit nisl bibendum. In hac habitasse platea dictumst.
+            </p>
+        </div>
+        <div class="red">
+            <b class="anchor" id="section3"></b>
+            <h1>Lorem ipsum</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget neque venenatis, lacinia lorem eu, feugiat metus. Sed accumsan tortor sed enim semper, ut eleifend massa sollicitudin. Quisque vitae imperdiet nulla. Donec vel posuere felis.
+                Ut aliquet sem diam, eget euismod tellus suscipit et. Nam ac ullamcorper velit. Fusce non magna non ligula maximus viverra. Vestibulum sed libero est. Duis tempus nulla vitae purus dictum, nec ornare dui commodo. Praesent feugiat lectus
+                metus. Fusce suscipit mauris nec nisl auctor placerat. Nullam venenatis nibh sed aliquam sodales. Cras a tortor at lectus vulputate volutpat. Phasellus placerat, neque sed dapibus aliquet, nisl nisl sollicitudin urna, sit amet tempus neque
+                massa vitae lorem. Donec diam orci, tempus id mollis vitae, consectetur vitae urna. Suspendisse at mauris molestie, pharetra nibh quis, posuere lorem. Ut dolor purus, ultricies a diam at, dictum convallis urna. Quisque efficitur tortor
+                in massa bibendum, et vulputate metus consequat. Donec mollis ipsum sit amet nibh hendrerit, elementum mattis mi blandit. Praesent ut sagittis ex. Cras convallis, nunc vel feugiat tempor, quam massa porttitor magna, quis maximus ex nisl
+                sed tortor. Donec vitae consectetur dui. Mauris dapibus, dolor ac pellentesque posuere, nulla eros imperdiet sem, non consectetur nunc dui et elit. Sed ut tempus odio. Sed iaculis mi erat, eu malesuada felis venenatis sed. Maecenas aliquam,
+                turpis in euismod vestibulum, lorem urna feugiat tellus, aliquet molestie felis libero nec mi. Nunc ultrices tempor urna viverra hendrerit. Donec sit amet lobortis purus, sit amet malesuada metus. Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Vivamus lobortis quis turpis eget fermentum. Sed nec diam ut ipsum rutrum bibendum quis ac nisl. Mauris tristique purus quis augue maximus, sit amet suscipit nisl bibendum. In hac habitasse platea dictumst.
+            </p>
+        </div>
+        <button class="topBtn" v-on:click="scrollToTop()" :class="{active: scrollButtonActive}">☝️</button>
+        <footer class="footer">
+            <div id="footer-container">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td class="white" id="custometd">Keress minket:</td>
+                            <td><a href="https://instagram.com/miskolcvarosidiakonkormanyzat?igshid=YmMyMTA2M2Y=" target="_blank"><i class="fab fa-instagram fa-2x"></i></a></td>
+                            <td><a href="https://www.facebook.com/Miskolcvarosidiakonkormanyzat/" target="_blank"><i class="fab fa-facebook fa-2x"></i></a></td>
+                            <td>
+                                <a href=" mailto:midok@gmail.com "></i><i class="far fa-envelope fa-2x"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+
+                </table>
+            </div>
+            <p class="white">© Copyright 2022 MIDÖK</p>
+        </footer>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="vue/main.js "></script>
 </body>
 
 </html>
