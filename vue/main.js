@@ -28,17 +28,15 @@ const app = Vue.createApp({
     },
     methods: {
         onScroll() {
-            const anchor = document.getElementById('section2')
-            let anchor_element = anchor.getBoundingClientRect()
-            console.log(anchor_element.top)
+            let distance = document.getElementById('section2').getBoundingClientRect()
             if (window.innerWidth > 650) {
-                if (anchor_element.top < 5) {
+                if (distance.top < 5) {
                     this.scrollButtonActive = true
                 } else {
                     this.scrollButtonActive = false
                 }
             } else {
-                if (anchor_element.top < 875) {
+                if (distance.top < 875) {
                     this.scrollButtonActive = true
                 } else {
                     this.scrollButtonActive = false

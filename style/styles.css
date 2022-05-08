@@ -112,36 +112,6 @@ a {
     }
 }
 
-.fade-in {
-    animation-name: FadeOut;
-    animation-duration: 0.7s;
-    transition-timing-function: linear;
-}
-
-.fade-in {
-    animation-name: FadeIn;
-    animation-duration: 0.7s;
-    transition-timing-function: linear;
-}
-
-@keyframes FadeOut {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-@keyframes FadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
 .green {
     background-color: rgb(140, 198, 62);
 }
