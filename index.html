@@ -46,7 +46,7 @@
             <a id="orange" href="#section2" class="navbar-brand">Title</a>
             <a id="red" href="#section3" class="navbar-brand">Title</a>
             <a id="blue" href="#section1" class="navbar-brand">Title</a>
-            <div class="weather-widget" :style="{bottom: dropDownFlag ? '6px' : 'unset'}"><i :class="weatherIcon"></i><span id="weather-widget" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold; color: rgb(90, 132, 247); margin-left: -1px ; padding-top: 6px">&nbsp; {{ temp }}°C</span></div>
+            <div class="weather-widget" :style="{bottom: dropDownFlag ? '6px' : 'unset'}"><i :class="weatherIcon" :style="{color: activeColor}"></i><span id="weather-widget" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold; color: rgb(90, 132, 247); margin-left: -1px ; padding-top: 6px">&nbsp; {{ temp }}°C</span></div>
         </div>
         <div class="green">
             <b class="anchor" id="section1"></b>
