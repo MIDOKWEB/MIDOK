@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/gallery.css">
+    <title>Galéria</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- Container for the image gallery -->
+        <div class="container">
+
+            <!-- Full-width images with number text -->
+            <div class="mySlides" style="display: block;">
+                <img class="bigpic" src="img/gyűlések/_DSC0964.JPG">
+            </div>
+
+            <div class="mySlides">
+                <img class="bigpic" src="img/gyűlések/_DSC0998.JPG">
+            </div>
+
+            <div class="mySlides">
+                <img class="bigpic" src="img/gyűlések/_DSC1027.JPG">
+            </div>
+
+            <div class="mySlides">
+                <img class="bigpic" src="img/gyűlések/_DSC1033.JPG">
+            </div>
+
+            <div class="mySlides">
+                <img class="bigpic" src="img/gyűlések/_DSC1055.JPG">
+            </div>
+
+            <div class="mySlides">
+                <img class="bigpic" src="img/gyűlések/_DSC1069.JPG">
+            </div>
+
+            <div class="mySlides">
+                <img class="bigpic" src="img/gyűlések/_DSC8638.JPG">
+            </div>
+
+            <div class="mySlides">
+                <img class="bigpic" src="img/gyűlések/_DSC8665.JPG">
+            </div>
+
+            <div class="mySlides">
+                <img class="bigpic" src="img/gyűlések/_DSC8672.JPG">
+            </div>
+
+            <div class="mySlides">
+                <img class="bigpic" src="img/gyűlések/_DSC8674.JPG">
+            </div>
+
+            <!-- Next and previous buttons -->
+            <a class="prev" @click="plusSlides(-1)">&#10094;</a>
+            <a class="next" @click="plusSlides(1)">&#10095;</a>
+
+            <!-- Thumbnail images -->
+            <div class="row">
+                <div class="column">
+                    <img class="demo cursor thumbnail active" src="img/gyűlések/_DSC0964.JPG" @click="currentSlide(1)" alt="The Woods">
+                </div>
+                <div class="column">
+                    <img class="demo cursor thumbnail" src="img/gyűlések/_DSC0998.JPG" @click="currentSlide(2)" alt="Cinque Terre">
+                </div>
+                <div class="column">
+                    <img class="demo cursor thumbnail" src="img/gyűlések/_DSC1027.JPG" @click="currentSlide(3)" alt="Mountains and fjords">
+                </div>
+                <div class="column">
+                    <img class="demo cursor thumbnail" src="img/gyűlések/_DSC1033.JPG" @click="currentSlide(4)" alt="Northern Lights">
+                </div>
+                <div class="column">
+                    <img class="demo cursor thumbnail" src="img/gyűlések/_DSC1055.JPG" @click="currentSlide(5)" alt="Nature and sunrise">
+                </div>
+                <div class="column">
+                    <img class="demo cursor thumbnail" src="img/gyűlések/_DSC1069.JPG" @click="currentSlide(6)" alt="Snowy Mountains">
+                </div>
+                <div class="column">
+                    <img class="demo cursor thumbnail" src="img/gyűlések/_DSC8638.JPG" @click="currentSlide(7)" alt="Snowy Mountains">
+                </div>
+                <div class="column">
+                    <img class="demo cursor thumbnail" src="img/gyűlések/_DSC8665.JPG" @click="currentSlide(8)" alt="Snowy Mountains">
+                </div>
+                <div class="column">
+                    <img class="demo cursor thumbnail" src="img/gyűlések/_DSC8672.JPG" @click="currentSlide(9)" alt="Snowy Mountains">
+                </div>
+                <div class="column">
+                    <img class="demo cursor thumbnail" src="img/gyűlések/_DSC8674.JPG" @click="currentSlide(10)" alt="Snowy Mountains">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="vue/gallery.js"></script>
+</body>
+
+</html>
