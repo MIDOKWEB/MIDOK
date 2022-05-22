@@ -20,7 +20,7 @@ const app = Vue.createApp({
                 window.addEventListener('scroll', this.onScroll)
             }),
             setInterval(this.weather, 300000) //5 min,
-        showSlides(slideIndex);
+        this.showSlides(this.slideIndex);
     },
     beforeDestroy() {
         window.removeEventListener('resize', this.onResize),
@@ -30,25 +30,25 @@ const app = Vue.createApp({
     },
     methods: {
         plusSlides(n) {
-            showSlides(slideIndex += n);
+            this.showSlides(this.slideIndex += n);
         },
         currentSlide(n) {
-            showSlides(slideIndex = n);
+            this.showSlides(this.slideIndex = n);
         },
         showSlides(n) {
             let i;
             let slides = document.getElementsByClassName("mySlides");
             let dots = document.getElementsByClassName("dot");
-            if (n > slides.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = slides.length }
+            if (n > slides.length) { this.slideIndex = 1 }
+            if (n < 1) { this.slideIndex = slides.length }
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
             for (i = 0; i < dots.length; i++) {
                 dots[i].className = dots[i].className.replace(" active", "");
             }
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
+            slides[this.slideIndex - 1].style.display = "block";
+            dots[this.slideIndex - 1].className += " active";
         },
         onScroll() {
             let distance = document.getElementById('section2').getBoundingClientRect()
