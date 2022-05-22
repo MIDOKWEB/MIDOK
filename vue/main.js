@@ -11,6 +11,7 @@ const app = Vue.createApp({
             activeColor: "#808080",
             scrollButtonActive: false,
             slideIndex: 1,
+            slideshowIcon: "fab fa-angellist fa-3x",
         }
     },
     mounted() {
@@ -24,11 +25,19 @@ const app = Vue.createApp({
     },
     beforeDestroy() {
         window.removeEventListener('resize', this.onResize),
-            window.removeEventListener('DOMContentLoaded', this.weather),
+            window.removeEventListener('DOMContentLoaded', this.onContentLoad),
             window.removeEventListener('scroll', this.onScroll)
         localStorage.setItem('scrollPosition', window.scrollY)
     },
     methods: {
+        onContentLoad() {
+            if (this.windowWidth <= 600) {
+                this.slideshowIcon = "fab fa-angellist fa-2x"
+            } else {
+                this.slideshowIcon = "fab fa-angellist fa-3x"
+            }
+            this.weather()
+        },
         plusSlides(n) {
             this.showSlides(this.slideIndex += n);
         },
@@ -38,17 +47,12 @@ const app = Vue.createApp({
         showSlides(n) {
             let i;
             let slides = document.getElementsByClassName("mySlides");
-            let dots = document.getElementsByClassName("dot");
             if (n > slides.length) { this.slideIndex = 1 }
             if (n < 1) { this.slideIndex = slides.length }
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
             slides[this.slideIndex - 1].style.display = "block";
-            dots[this.slideIndex - 1].className += " active";
         },
         onScroll() {
             let distance = document.getElementById('section2').getBoundingClientRect()
@@ -74,6 +78,11 @@ const app = Vue.createApp({
             this.windowWidth = window.innerWidth
             if (this.windowWidth >= 650) {
                 this.dropDownFlag = false
+            }
+            if (this.windowWidth <= 600) {
+                this.slideshowIcon = "fab fa-angellist fa-2x"
+            } else {
+                this.slideshowIcon = "fab fa-angellist fa-3x"
             }
         },
         scrollToTop() {
