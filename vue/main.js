@@ -10,6 +10,7 @@ const app = Vue.createApp({
             rightPosSize: 55,
             activeColor: "#808080",
             scrollButtonActive: false,
+            slideIndex: 1,
         }
     },
     mounted() {
@@ -18,7 +19,8 @@ const app = Vue.createApp({
                 window.addEventListener('DOMContentLoaded', this.weather)
                 window.addEventListener('scroll', this.onScroll)
             }),
-            setInterval(this.weather, 300000) //5 min
+            setInterval(this.weather, 300000) //5 min,
+        showSlides(slideIndex);
     },
     beforeDestroy() {
         window.removeEventListener('resize', this.onResize),
@@ -27,6 +29,27 @@ const app = Vue.createApp({
         localStorage.setItem('scrollPosition', window.scrollY)
     },
     methods: {
+        plusSlides(n) {
+            showSlides(slideIndex += n);
+        },
+        currentSlide(n) {
+            showSlides(slideIndex = n);
+        },
+        showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        },
         onScroll() {
             let distance = document.getElementById('section2').getBoundingClientRect()
             if (window.innerWidth > 650) {
