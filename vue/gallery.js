@@ -21,7 +21,6 @@ const app = Vue.createApp({
             let i;
             let slides = document.getElementsByClassName("mySlides");
             let dots = document.getElementsByClassName("demo");
-            let captionText = document.getElementById("caption");
             if (n > slides.length) { this.slideIndex = 1 }
             if (n < 1) { this.slideIndex = slides.length }
             for (i = 0; i < slides.length; i++) {
@@ -32,7 +31,6 @@ const app = Vue.createApp({
             }
             slides[this.slideIndex - 1].style.display = "block";
             dots[this.slideIndex - 1].className += " active";
-            captionText.innerHTML = dots[this.slideIndex - 1].alt;
         }
     }
 })
