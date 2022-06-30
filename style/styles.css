@@ -26,41 +26,110 @@ body {
     padding-bottom: 3px !important;
 }
 
-a {
-    font-weight: bold;
-}
-
 #green {
+    font-weight: bold;
+    text-decoration: none;
+    background:
+    linear-gradient(
+      to right,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 1)
+    ),
+    linear-gradient(
+      to right,
+       rgba(110, 163, 41, 1),
+        rgba(110, 163, 41, 1) 
+  );
+  background-size: 100% 0px, 0 3px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
     color: rgb(140, 198, 62) !important;
 }
 
 #green:hover {
     color: rgb(110, 163, 41) !important;
+    background-size: 0 3px, 100% 3px;
 }
 
 #orange {
+    font-weight: bold;
+    text-decoration: none;
+    background:
+    linear-gradient(
+      to right,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 1)
+    ),
+    linear-gradient(
+      to right,
+      rgba(222, 110, 0, 1),
+      rgba(222, 110, 0, 1)
+  );
+  background-size: 100% 0px, 0 3px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
     color: rgb(252, 141, 5) !important;
 }
 
 #orange:hover {
     color: rgb(222, 110, 0) !important;
+    background-size: 0 3px, 100% 3px;
 }
 
 #red {
+    font-weight: bold;
+    text-decoration: none;
+    background:
+    linear-gradient(
+      to right,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 1)
+    ),
+    linear-gradient(
+      to right,
+      rgba(230, 42, 85, 1),
+      rgba(230, 42, 85, 1)
+  );
+  background-size: 100% 0px, 0 3px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
     color: rgb(250, 72, 93);
 }
 
 #red:hover {
     color: rgb(230, 42, 85);
+    background-size: 0 3px, 100% 3px;
 }
 
 #right {
+    font-weight: bold;
+    text-decoration: none;
+    background:
+    linear-gradient(
+      to right,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 1)
+    ),
+    linear-gradient(
+      to right,
+      rgba(41, 86, 209, 1),
+      rgba(41, 86, 209, 1)
+  );
+  background-size: 100% 0px, 0 3px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
     color: rgb(90, 132, 247);
     position: absolute;
+    font-weight: bold;
 }
 
 #right:hover {
     color: rgb(41, 86, 209);
+    background-size: 0 3px, 100% 3px;
 }
 
 .weather-widget {
@@ -259,6 +328,10 @@ p {
     nav #red,
     nav #right {
         display: none !important;
+    }
+    #green, #orange,  #red, #blue {
+        font-weight: bold;
+        background: none;
     }
     #weather-variable {
         display: none;
