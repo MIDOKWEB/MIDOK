@@ -4,12 +4,6 @@ const app = Vue.createApp({
             slideIndex: 1,
         }
     },
-    mounted() {
-
-    },
-    beforeDestroy() {
-
-    },
     methods: {
         plusSlides(n) {
             this.showSlides(this.slideIndex += n);
