@@ -2,9 +2,27 @@ const app = Vue.createApp({
     data() {
         return {
             slideIndex: 1,
+            windowWidth: window.innerWidth,
         }
     },
+    mounted() {
+        window.addEventListener('click', this.autoScroll)
+    },
+    beforeDestroy() {
+        window.removeEventListener('click', this.autoScroll)
+    },
     methods: {
+        autoScroll() {
+            let activeThumb = document.getElementById("active")
+            activeThumb.scrollIntoView({
+                behavior: 'auto',
+                block: 'center',
+                inline: 'center'
+            })
+        },
+        getImageUrl(imgid) {
+            return `../../img/load/pos_${imgid}.JPG`
+        },
         plusSlides(n) {
             this.showSlides(this.slideIndex += n);
         },
@@ -21,10 +39,10 @@ const app = Vue.createApp({
                 slides[i].style.display = "none";
             }
             for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
+                dots[i].id = dots[i].removeAttribute("id");
             }
             slides[this.slideIndex - 1].style.display = "block";
-            dots[this.slideIndex - 1].className += " active";
+            dots[this.slideIndex - 1].id = "active";
         }
     }
 })

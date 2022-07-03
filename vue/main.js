@@ -1,6 +1,9 @@
 const app = Vue.createApp({
     data() {
         return {
+            sunrise: 0,
+            sunset: 0,
+            currentTime: Math.round(+new Date()/1000),
             windowWidth: window.innerWidth,
             dropDownFlag: false,
             temp: 0,
@@ -15,13 +18,11 @@ const app = Vue.createApp({
         }
     },
     mounted() {
-        this.$nextTick(() => {
-                window.addEventListener('resize', this.onResize)
-                window.addEventListener('DOMContentLoaded', this.weather)
-                window.addEventListener('scroll', this.onScroll)
-            }),
-            setInterval(this.weather, 300000) //5 min,
-        this.showSlides(this.slideIndex);
+        window.addEventListener('resize', this.onResize)
+        window.addEventListener('DOMContentLoaded', this.onContentLoad)
+        window.addEventListener('scroll', this.onScroll)
+        setInterval(this.weather, 300000), //5 min
+        this.showSlides(this.slideIndex)
     },
     beforeDestroy() {
         window.removeEventListener('resize', this.onResize),
@@ -30,6 +31,17 @@ const app = Vue.createApp({
         localStorage.setItem('scrollPosition', window.scrollY)
     },
     methods: {
+        getGalleryUrl() {
+            if (this.slideIndex == 1) {
+                window.location.href = '../galeria_alap/'
+            }
+            else if (this.slideIndex == 2) {
+                window.location.href = '../galeria_alap/'
+            }
+            else if (this.slideIndex == 3) {
+                window.location.href = '../galeria_alap/'
+            }
+        },
         onContentLoad() {
             if (this.windowWidth <= 600) {
                 this.slideshowIcon = "fab fa-angellist fa-2x"
@@ -97,6 +109,8 @@ const app = Vue.createApp({
                 .then(data => {
                     this.temp = Math.round(data.main.temp, 0)
                     this.cond = data.weather[0].id
+                    this.sunset = data.sys.sunset
+                    this.sunrise = data.sys.sunrise
                 })
                 .catch(err => console.log(err))
         },
@@ -137,9 +151,15 @@ const app = Vue.createApp({
                     this.weatherIcon = "fa-solid fa-cloud fa"
                     break
                 case '9':
-                    this.weatherIcon = "fa-solid fa-sun fa"
-                    this.activeColor = "#FDB813"
-                    break
+                    if (this.currentTime > this.sunset || this.currentTime < this.sunrise) {
+                        this.weatherIcon = "fa-solid fa-moon"
+                        break
+                    }
+                    else {
+                        this.weatherIcon = "fa-solid fa-sun fa"
+                        this.activeColor = "#FDB813"
+                        break
+                    }
             }
         }
     }
