@@ -2,7 +2,6 @@ body {
     width:auto;
     margin: 0px;
     background-color: black;
-    overflow-y: hidden !important;
     overflow-x: hidden;
 }
 

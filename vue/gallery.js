@@ -15,7 +15,13 @@ const app = Vue.createApp({
     },
     methods: {
         onLoad() {
-            console.log(navigator.vendor)
+            try {
+                window.scrollTo(0, 1)
+            }
+            catch (error) {
+                console.log("Valami nem jo gec")
+                console.log(error)
+            }
         },
         autoScroll() {
             let activeThumb = document.getElementById("active")
