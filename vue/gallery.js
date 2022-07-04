@@ -9,13 +9,27 @@ const app = Vue.createApp({
         window.addEventListener('click', this.autoScroll)
         window.addEventListener('resize', this.onResize)
         window.addEventListener('load', this.onLoad)
+        window.addEventListener('scroll', this.onScroll)
     },
     beforeDestroy() {
         window.removeEventListener('click', this.autoScroll)
         window.removeEventListener('load', this.onLoad)
         window.removeEventListener('resize', this.onResize)
+        window.removeEventListener('scroll', this.onScroll)
     },
     methods: {
+        onScroll() {
+            this.autoScroll()
+        },
+        isInViewport(element) {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        },
         onResize() {
             this.autoScroll()
         },
@@ -29,6 +43,7 @@ const app = Vue.createApp({
                 block: 'center',
                 inline: 'center'
             })
+            console.log('scrolled')
         },
         getImageUrl(imgid) {
             return `../../img/load/pos_${imgid}.JPG`
