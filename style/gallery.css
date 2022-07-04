@@ -125,8 +125,7 @@ body {
 @media screen and (max-width: 650px) {
 
     .imgcontainer {
-        height: unset;
-        max-height: 87vh;
+        height: 87vh;
     }
 
     .bigpic {
