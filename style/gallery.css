@@ -1,5 +1,6 @@
 body {
     width:auto;
+    height: calc(100vh - env(safe-area-inset-bottom));
     margin: 0px;
     background-color: black;
     overflow-x: hidden;
