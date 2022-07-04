@@ -1,8 +1,8 @@
 body {
     width:auto;
-    height: calc(100vh - env(safe-area-inset-bottom));
     margin: 0px;
     background-color: black;
+    overflow-y: hidden !important;
     overflow-x: hidden;
 }
 
@@ -72,9 +72,9 @@ body {
 }
 
 .container .fa-xmark{
-    position: absolute;
+    position: sticky;
     top: 30px;
-    right: 30px;
+    left: 97vw;
     font-size: 3em;
     color: lightgray;
     transition: 0.3s;
