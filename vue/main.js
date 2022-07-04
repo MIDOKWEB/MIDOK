@@ -10,7 +10,7 @@ const app = Vue.createApp({
             cond: 0,
             weatherIcon: "",
             url: `https://api.openweathermap.org/data/2.5/weather?q=Miskolc&appid=b507570f3421bc3c5de317151523a9e0&units=metric`,
-            rightPosSize: 55,
+            rightPosSize: 60,
             activeColor: "#808080",
             scrollButtonActive: false,
             slideIndex: 1,

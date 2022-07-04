@@ -117,6 +117,7 @@ body {
 }
 
 .weather-widget {
+    display: inline;
     position: absolute;
     right: 5px;
 }
@@ -295,28 +296,7 @@ p {
 
 /*Repsonsive*/
 
-@media screen and (max-width: 800px) {
-    .navbar-brand {
-        margin-left: 0.6em !important;
-        margin-right: 0.6em !important;
-    }
-}
-
-@media screen and (max-width: 700px) {
-    .navbar-brand {
-        margin-left: 0.3em !important;
-        margin-right: 0.3em !important;
-    }
-}
-
-@media screen and (max-width: 670px) {
-    .navbar-brand {
-        margin-left: 0.25em !important;
-        margin-right: 0.25em !important;
-    }
-}
-
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 990px) {
     html {
         overflow-x: hidden;
     }
@@ -357,7 +337,7 @@ p {
     }
 
     #weather-variable {
-        display: none;
+        display: none !important;
     }
 
     #icon {
@@ -372,10 +352,21 @@ p {
 
     .dropdown {
         background-color: rgb(251, 251, 251);
+        align-items: center;
     }
 
     #topBtn {
         bottom: 15vh;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .weather-widget {
+        position: unset;
+        margin-left: 0.8em;
+    }
+    .weather-widget i{
+        max-height: 16px;
     }
 }
 
