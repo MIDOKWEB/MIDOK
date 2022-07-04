@@ -72,7 +72,7 @@ body {
 }
 
 .container .fa-xmark {
-    top: 2vw;
+    top: 3vh;
     right: 2vw;
     position: fixed;
     font-size: 3em;
