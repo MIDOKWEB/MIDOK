@@ -76,6 +76,8 @@ body {
     font-size: 3em;
     color: lightgray;
     transition: 0.3s;
+    margin-top: calc(env(safe-aria-inset-top)-5.5em);
+    right: 1em;
 }
 
 .container .fa-xmark:hover {
