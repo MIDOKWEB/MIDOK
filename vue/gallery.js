@@ -7,7 +7,7 @@ const app = Vue.createApp({
     },
     mounted() {
         window.addEventListener('click', this.autoScroll)
-        window.addEventListener('load', onLoad)
+        window.addEventListener('load', this.onLoad)
     },
     beforeDestroy() {
         window.removeEventListener('click', this.autoScroll)
