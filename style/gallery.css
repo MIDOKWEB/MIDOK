@@ -73,11 +73,11 @@ body {
 
 .container .fa-xmark {
     position: absolute;
-    right: 30px;
     font-size: 3em;
     color: lightgray;
     transition: 0.3s;
-    padding-top: env(safe-aria-inset-top, 30px);
+    top: env(safe-aria-inset-top, 30px);
+    right: env(safe-aria-inset-right, 30px);
 }
 
 .container .fa-xmark:hover {
