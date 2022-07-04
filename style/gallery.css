@@ -1,5 +1,5 @@
 body {
-    width:auto;
+    width: auto;
     margin: 0px;
     background-color: black;
     overflow-y: hidden !important;
@@ -22,7 +22,7 @@ body {
 /* Hide the images by default */
 
 .mySlides {
-    display:none;
+    display: none;
     margin-top: 1em;
     margin-bottom: 1em;
 }
@@ -71,13 +71,13 @@ body {
     color: white;
 }
 
-.container .fa-xmark{
+.container .fa-xmark {
     position: absolute;
-    top: 30px;
     right: 30px;
     font-size: 3em;
     color: lightgray;
     transition: 0.3s;
+    padding-top: env(safe-aria-inset-top, 30px);
 }
 
 .container .fa-xmark:hover {
@@ -127,10 +127,9 @@ body {
 @media screen and (max-width: 650px) {
 
     .imgcontainer {
-        padding-top: env(safe-aria-inset-top, 0.5em);
-        max-height: 87vh;
+        height: 87vh;
     }
-    
+
     .bigpic {
         width: 100vw;
         height: auto;

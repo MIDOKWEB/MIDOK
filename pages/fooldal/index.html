@@ -39,10 +39,12 @@
                 <a id="green" href="#section1" class="navbar-brand">Hírek</a>
                 <a id="orange" href="#section2" class="navbar-brand">Elnökség</a>
                 <a id="red" href="#section3" class="navbar-brand">Galéria</a>
-                <a id="right" href="#section1" class="navbar-brand" :style="{'right': rightPosSize + 'px'}">Bejelentkezés</a>
+                <a id="right" href="#section1" class="navbar-brand"
+                    :style="{'right': rightPosSize + 'px'}">Bejelentkezés</a>
                 <div id="weather-variable" class="weather-widget"><i :class="weatherIcon"
                         :style="{color: activeColor}"></i><span id="weather-widget"
-                        style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold; color: rgb(90, 132, 247); margin-left: -1px ;display: inline">&nbsp;{{ temp }}°C</span>
+                        style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold; color: rgb(90, 132, 247); margin-left: -1px ;display: inline">&nbsp;
+                        {{ temp }}°C</span>
                 </div>
                 <a v-on:click="toggleDropdown()" id="icon"><i class="fa-solid fa-bars fa-2x"></i></a>
             </nav>
@@ -167,4 +169,5 @@
     <script src="https://unpkg.com/vue@3"></script>
     <script src="../../vue/main.js"></script>
 </body>
+
 </html>
