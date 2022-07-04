@@ -72,12 +72,12 @@ body {
 }
 
 .container .fa-xmark {
-    position: absolute;
+    top: 2vw;
+    right: 2vw;
+    position: fixed;
     font-size: 3em;
     color: lightgray;
     transition: 0.3s;
-    margin-top: 2rem;
-    right: 0.5em;
 }
 
 .container .fa-xmark:hover {
