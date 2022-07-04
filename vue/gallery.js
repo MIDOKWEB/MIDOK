@@ -7,11 +7,22 @@ const app = Vue.createApp({
     },
     mounted() {
         window.addEventListener('click', this.autoScroll)
+        window.addEventListener('load', onLoad)
     },
     beforeDestroy() {
         window.removeEventListener('click', this.autoScroll)
+        window.removeEventListener('load', this.onLoad)
     },
     methods: {
+        onLoad() {
+            try {
+                window.scrollTo(0, 1)
+            }
+            catch (error) {
+                console.log("Valami nem jo gec")
+                console.log(error)
+            }
+        },
         autoScroll() {
             let activeThumb = document.getElementById("active")
             activeThumb.scrollIntoView({
