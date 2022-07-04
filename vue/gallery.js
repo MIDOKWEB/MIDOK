@@ -19,7 +19,7 @@ const app = Vue.createApp({
     },
     methods: {
         onScroll() {
-            this.autoScroll()
+            this.autoScroll_instant()
         },
         onResize() {
             this.autoScroll()
@@ -35,6 +35,15 @@ const app = Vue.createApp({
                 inline: 'center'
             })
             console.log('scrolled')
+        },
+        autoScroll_instant() {
+            let activeThumb = document.getElementById("active")
+            activeThumb.scrollIntoView({
+                behavior: 'auto',
+                block: 'center',
+                inline: 'center'
+            })
+            console.log('instant scrolled')
         },
         getImageUrl(imgid) {
             return `../../img/load/pos_${imgid}.JPG`
