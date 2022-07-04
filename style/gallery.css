@@ -76,7 +76,7 @@ body {
     font-size: 3em;
     color: lightgray;
     transition: 0.3s;
-    top: env(safe-aria-inset-top, 30px);
+    top: env(safe-aria-inset-top, 150px);
     right: env(safe-aria-inset-right, 30px);
 }
 
