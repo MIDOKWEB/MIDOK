@@ -26,8 +26,8 @@ const app = Vue.createApp({
     },
     beforeDestroy() {
         window.removeEventListener('resize', this.onResize),
-            window.removeEventListener('DOMContentLoaded', this.onContentLoad),
-            window.removeEventListener('scroll', this.onScroll)
+        window.removeEventListener('DOMContentLoaded', this.onContentLoad),
+        window.removeEventListener('scroll', this.onScroll)
         localStorage.setItem('scrollPosition', window.scrollY)
     },
     methods: {

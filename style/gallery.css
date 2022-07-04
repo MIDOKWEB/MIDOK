@@ -72,9 +72,9 @@ body {
 }
 
 .container .fa-xmark{
-    position: sticky;
+    position: absolute;
     top: 30px;
-    left: 97vw;
+    right: 30px;
     font-size: 3em;
     color: lightgray;
     transition: 0.3s;
