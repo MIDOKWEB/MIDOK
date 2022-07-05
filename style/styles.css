@@ -189,6 +189,30 @@ body {
     top: 2px;
 }
 
+.news {
+    display: flex;
+    justify-content: center;
+}
+
+.news h3 {
+    margin-top: 1rem;
+}
+
+.news td {
+    text-align: center;
+}
+
+.news img {
+    width: 40vh;
+}
+
+.news a {
+    width: fit-content;
+    text-align: center;
+    color: white;
+    text-decoration: none;
+}
+
 h1 {
     padding-top: 1rem;
 }

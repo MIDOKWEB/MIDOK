@@ -1,26 +1,36 @@
 const app = Vue.createApp({
     data() {
         return {
+            widthFlag: 0,
             slideIndex: 1,
             windowWidth: window.innerWidth,
+            windowHeight: window.innerHeight
         }
     },
     mounted() {
         window.addEventListener('click', this.autoScroll)
+        window.addEventListener('DOMContentLoaded', this.onLoad)
         window.addEventListener('resize', this.onResize)
-        window.addEventListener('load', this.onLoad)
     },
     beforeDestroy() {
         window.removeEventListener('click', this.autoScroll)
-        window.removeEventListener('load', this.onLoad)
+        window.removeEventListener('DOMContentLoaded', this.onLoad)
         window.removeEventListener('resize', this.onResize)
     },
     methods: {
+        setImageSize() {
+            if (this.windowHeight <= 900) {
+                this.widthFlag = 1
+            }
+            else {
+                this.widthFlag = 0
+            }
+        },
         onResize() {
-            this.autoScroll()
+            this.setImageSize()
         },
         onLoad() {
-            this.autoScroll()
+            this.setImageSize()
         },
         autoScroll() {
             let activeThumb = document.getElementById("active")
@@ -43,12 +53,8 @@ const app = Vue.createApp({
             let i;
             let slides = document.getElementsByClassName("mySlides");
             let dots = document.getElementsByClassName("demo");
-            if (n > slides.length) {
-                this.slideIndex = 1
-            }
-            if (n < 1) {
-                this.slideIndex = slides.length
-            }
+            if (n > slides.length) { this.slideIndex = 1 }
+            if (n < 1) { this.slideIndex = slides.length }
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
