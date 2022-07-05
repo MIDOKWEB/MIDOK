@@ -3,7 +3,7 @@ const app = Vue.createApp({
         return {
             sunrise: 0,
             sunset: 0,
-            currentTime: Math.round(+new Date()/1000),
+            currentTime: Math.round(+new Date() / 1000),
             windowWidth: window.innerWidth,
             dropDownFlag: false,
             temp: 0,
@@ -34,11 +34,9 @@ const app = Vue.createApp({
         getGalleryUrl() {
             if (this.slideIndex == 1) {
                 window.location.href = '../galeria_alap/'
-            }
-            else if (this.slideIndex == 2) {
+            } else if (this.slideIndex == 2) {
                 window.location.href = '../galeria_alap/'
-            }
-            else if (this.slideIndex == 3) {
+            } else if (this.slideIndex == 3) {
                 window.location.href = '../galeria_alap/'
             }
         },
@@ -59,8 +57,12 @@ const app = Vue.createApp({
         showSlides(n) {
             let i;
             let slides = document.getElementsByClassName("mySlides");
-            if (n > slides.length) { this.slideIndex = 1 }
-            if (n < 1) { this.slideIndex = slides.length }
+            if (n > slides.length) {
+                this.slideIndex = 1
+            }
+            if (n < 1) {
+                this.slideIndex = slides.length
+            }
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
@@ -154,8 +156,7 @@ const app = Vue.createApp({
                     if (this.currentTime > this.sunset || this.currentTime < this.sunrise) {
                         this.weatherIcon = "fa-solid fa-moon"
                         break
-                    }
-                    else {
+                    } else {
                         this.weatherIcon = "fa-solid fa-sun fa"
                         this.activeColor = "#FDB813"
                         break

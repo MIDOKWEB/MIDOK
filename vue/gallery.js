@@ -9,24 +9,19 @@ const app = Vue.createApp({
         window.addEventListener('click', this.autoScroll)
         window.addEventListener('resize', this.onResize)
         window.addEventListener('load', this.onLoad)
-        window.addEventListener('scroll', this.onScroll)
     },
     beforeDestroy() {
         window.removeEventListener('click', this.autoScroll)
         window.removeEventListener('load', this.onLoad)
         window.removeEventListener('resize', this.onResize)
-        window.removeEventListener('scroll', this.onScroll)
     },
     methods: {
-        onScroll() {
-            this.autoScroll_instant()
-        },
         onResize() {
             this.autoScroll()
         },
         onLoad() {
             this.autoScroll()
-        },  
+        },
         autoScroll() {
             let activeThumb = document.getElementById("active")
             activeThumb.scrollIntoView({
@@ -34,16 +29,6 @@ const app = Vue.createApp({
                 block: 'center',
                 inline: 'center'
             })
-            console.log('scrolled')
-        },
-        autoScroll_instant() {
-            let activeThumb = document.getElementById("active")
-            activeThumb.scrollIntoView({
-                behavior: 'auto',
-                block: 'center',
-                inline: 'center'
-            })
-            console.log('instant scrolled')
         },
         getImageUrl(imgid) {
             return `../../img/load/pos_${imgid}.JPG`
@@ -58,8 +43,12 @@ const app = Vue.createApp({
             let i;
             let slides = document.getElementsByClassName("mySlides");
             let dots = document.getElementsByClassName("demo");
-            if (n > slides.length) { this.slideIndex = 1 }
-            if (n < 1) { this.slideIndex = slides.length }
+            if (n > slides.length) {
+                this.slideIndex = 1
+            }
+            if (n < 1) {
+                this.slideIndex = slides.length
+            }
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";
             }
