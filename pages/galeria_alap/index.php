@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="apple-touch-icon" sizes="57x57" href="../../favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../../favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../../favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../../favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../../favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../../favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../../favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../../favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../../favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../../favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../../favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../favicon/favicon-16x16.png">
+    <link rel="manifest" href="../../favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style/gallery.css">
+    <script src="https://kit.fontawesome.com/58a9dcf95a.js" crossorigin="anonymous"></script>
+    <title>Galéria</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- Container for the image gallery -->
+        <div class="container">
+            <a href="../fooldal/"><i class="fa-solid fa-xmark "></i></a>
+            <!-- Full-width images with number text -->
+            <div class="imgcontainer">
+                <div class="mySlides" style="display: block;">
+                    <img class="bigpic" :style="{width: widthFlag ? '55vw' : '58vw'}" :src="getImageUrl(0)">
+                </div>
+                <div class="mySlides">
+                    <img class="bigpic" :style="{width: widthFlag ? '55vw' : '58vw'}" :src="getImageUrl(1)">
+                </div>
+                <div class="mySlides">
+                    <img class="bigpic" :style="{width: widthFlag ? '55vw' : '58vw'}" :src="getImageUrl(2)">
+                </div>
+                <div class="mySlides">
+                    <img class="bigpic" :style="{width: widthFlag ? '55vw' : '58vw'}" :src="getImageUrl(3)">
+                </div>
+                <div class="mySlides">
+                    <img class="bigpic" :style="{width: widthFlag ? '55vw' : '58vw'}" :src="getImageUrl(4)">
+                </div>
+                <div class="mySlides">
+                    <img class="bigpic" :style="{width: widthFlag ? '55vw' : '58vw'}" :src="getImageUrl(5)">
+                </div>
+                <div class="mySlides">
+                    <img class="bigpic" :style="{width: widthFlag ? '55vw' : '58vw'}" :src="getImageUrl(6)">
+                </div>
+                <div class="mySlides">
+                    <img class="bigpic" :style="{width: widthFlag ? '55vw' : '58vw'}" :src="getImageUrl(7)">
+                </div>
+                <div class="mySlides">
+                    <img class="bigpic" :style="{width: widthFlag ? '55vw' : '58vw'}" :src="getImageUrl(8)">
+                </div>
+                <div class="mySlides">
+                    <img class="bigpic" :style="{width: widthFlag ? '55vw' : '58vw'}" :src="getImageUrl(9)">
+                </div>
+                <a class="prev" @click="plusSlides(-1)"><i class="fa-solid fa-arrow-left"></i></a>
+                <a class="next" @click="plusSlides(1)"><i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+
+            <!-- Thumbnail images -->
+            <div class="row">
+                <div class="column">
+                    <img class="demo thumbnail" id="active" :src="getImageUrl(0)" @click="currentSlide(1)">
+                </div>
+                <div class="column">
+                    <img class="demo thumbnail" id="" :src="getImageUrl(1)" @click="currentSlide(2)">
+                </div>
+                <div class="column">
+                    <img class="demo thumbnail" id="" :src="getImageUrl(2)" @click="currentSlide(3)">
+                </div>
+                <div class="column">
+                    <img class="demo thumbnail" id="" :src="getImageUrl(3)" @click="currentSlide(4)">
+                </div>
+                <div class="column">
+                    <img class="demo thumbnail" id="" :src="getImageUrl(4)" @click="currentSlide(5)">
+                </div>
+                <div class="column">
+                    <img class="demo thumbnail" id="" :src="getImageUrl(5)" @click="currentSlide(6)">
+                </div>
+                <div class="column">
+                    <img class="demo thumbnail" id="" :src="getImageUrl(6)" @click="currentSlide(7)">
+                </div>
+                <div class="column">
+                    <img class="demo thumbnail" id="" :src="getImageUrl(7)" @click="currentSlide(8)">
+                </div>
+                <div class="column">
+                    <img class="demo thumbnail" id="" :src="getImageUrl(8)" @click="currentSlide(9)">
+                </div>
+                <div class="column">
+                    <img class="demo thumbnail" id="" :src="getImageUrl(9)" @click="currentSlide(10)">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="../../vue/gallery.js"></script>
+</body>
+
+</html>
